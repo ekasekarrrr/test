@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHAKEMAP TERPADU</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS-->
+    <style>
+      #Tata {
+        text-align: justify;
+        background: #00008b;
+        width: 100%;
+        color: #ffffff;
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+
+      #kontak {
+        background: #4b0082;
+        width: 100%;
+        color: #ffffff;
+        border-style: double;
+        padding: 20px;
+      }
+      #Nilai {
+        background: #e6e6fa;
+        width: 100%;
+        color: black;
+        border-style: double;
+        padding: 20px;
+      }
+      #peta {
+        padding: 10px;
+      }
+      html,
+      body,
+      #map {
+        width: 100%;
+        height: 100%;
+        align: center;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">SHAKEMAP TERPADU BERBASIS WEB</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#Tata"
+                >Home</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="#map1">Bantul</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#map2">Gorontalo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#map3">Padang</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Lainnya
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#Nilai">Kritik dan Saran</a>
+                </li>
+                <li><a class="dropdown-item" href="#Kontak">Kontak</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar-end-->
+    <!-- Tata-->
+    <section id="Tata">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col">
+            <h2>SHAKEMAP TERPADU</h2>
+          </div>
+        </div>
+        <div class="row">
+          <p>
+            Shakemap (Peta Tingkat Guncangan) merupakan peta yang menunjukkan
+            besarnya guncangan gempabumi dalam satuan percepatan (gal) (Wibowo &
+            Nurhaci, 2017). Shakemap terdiri dari beberapa informasi, yaitu PGA
+            (Peak Ground Acceleration) atau percepatan tanah maksimum, PGV (Peak
+            Ground Velocity) atau kecepatan tanah maksimum, PSA (Peak Spectral
+            Acceleration) atau percepatan spektral maksimum, dan intensitas
+            gempa. Shakemap merepresentasikan getaran tanah yang dihasilkan oleh
+            gempabumi. Informasi yang diberikan berbeda dengan besarnya
+            gempabumi dan pusat terjadinya, biasanya diberikan setelah
+            gempabumi. Fokus Shakemap adalah getaran tanah yang dihasilkan oleh
+            gempabumi daripada parameter yang menggambarkan sumber gempabumi.
+            Lokasi shakemap terpadu ini berada di kabupaten Bantul, kota Padang,
+            kota Gorontalo.
+            <br>
+            Shakemap terpadu adalah peta yang menampilkan peta percepatan
+              tanah yang didapatkan dari interpolasi data PGA yang didapatkan
+              dari pengolahan software shakemap BMKG yang ditambahkan dengan
+              data bangunan yang diperoleh dari Open Street map, data batas
+              administrasi yang diperoleh dari Ina Geoportal, dan jumlah
+              penduduk yang diperoleh dari data BPS Kota/kabupaten setempat.
+              </br>
+          </p>
+        </div>
+      </div>
+      <br /><br />
+      <div class="container text-center">
+        <div class="row align-items-start" style="text-align: justify">
+          <div class="col">
+            <h3 class="text-center">Bantul</h3>
+            <p>
+              Bantul adalah salah satu kabupaten di Provinsi DIY dengan
+              topografi yang beragam, meliputi perbukitan di bagian selatan dan
+              dataran rendah di bagian utara. Selain itu, terdapat sesar aktif
+              yaitu Sesar Opak. Hal tersebut dapat berpotensi menibulkan gempa
+              bumi. Salah satu gempa bumi terbesar di Bantul terjadi pada tahun
+              2006 dengan magnitude 6.3. Hasil pengolahan shakemap terpadu didapatkan bangunan beresiko sangat rendah berjumlah 48.210, bangunan beresiko rendah 108.983, bangunan beresiko sedang 116.727, bangunan beresiko tinggi 117.902, dan bangunan beresiko sangat tinggi berjumlah 77.161.
+            </p>
+          </div>
+          <div class="col">
+            <h3 class="text-center">Gorontalo</h3>
+            <p>
+              Gorontalo menjadi salah satu daerah rawan bencana gempa bumi dan
+              secara tektonik berada di wilayah pertemuan 2 lempeng besar, yakni
+              lempeng Pasifik dan Eurasia serta lempeng-lempeng mikro. Peta
+              Geologi Gorontalo menunjukkan adanya struktur sesar yang memotong
+              wilayah kota Gorontalo.
+              <br>Hasil pengolahan shakemap terpadu didapatkan bangunan beresiko sangat rendah berjumlah 48.856, bangunan beresiko rendah 38.686, bangunan beresiko sedang 86.727, bangunan beresiko tinggi 107.092, dan bangunan beresiko sangat tinggi berjumlah 90.981.<br/>
+            </p>
+          </div>
+
+          <div class="col">
+            <h3 class="text-center">Padang</h3>
+            <p>
+              Padang sangat rentan terhadap gempa bumi karena Padang berada di
+              dekat pertemuan dua lempeng tektonik utama, Lempeng Indo-Australia
+              dan Lempeng Eurasia. Selain itu, adanya Sesar Sumatera di
+              sepanjang pulau meningkatkan kemungkinan gempa.
+              <br>Hasil pengolahan shakemap terpadu didapatkan bangunan beresiko sangat rendah berjumlah 4.664, bangunan beresiko rendah 11.500, bangunan beresiko sedang 122.054, bangunan beresiko tinggi 54.443, dan bangunan beresiko sangat tinggi berjumlah 77.238.<br/>
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Tata-end-->
+    <!-- Peta -->
+    <section id="peta"></section>
+    <section id="map1">
+      <center><h3>Dashboard Kabupaten Bantul</h3></center>
+      <iframe
+        style="border: double"
+        align=""
+        center
+        height="1000px"
+        width="100%"
+        src="http://localhost:9090/mapstore/#/dashboard/232"
+      ></iframe
+      >"
+    </section>
+    <!-- Peta-end -->
+    <!-- Peta -->
+    <section id="peta"></section>
+    <section id="map2">
+      <center><h3>Dashboard Kota Gorontalo</h3></center>
+      <iframe
+        style="border: double"
+        align=""
+        center
+        height="1000px"
+        width="100%"
+        src="http://localhost:9090/mapstore/#/dashboard/283"
+      ></iframe
+      >"
+    </section>
+    <!-- Peta-end -->
+    <!-- Peta -->
+    <section id="peta"></section>
+    <section id="map3">
+      <center><h3>Dashboard Kota Padang</h3></center>
+      <iframe
+        style="border: double"
+        align=""
+        center
+        height="1000px"
+        width="100%"
+        src="http://localhost:9090/mapstore/#/dashboard/295"
+      ></iframe
+      >"
+    </section>
+    <!-- Peta-end -->
+    <!-- Nilai -->
+    <section id="Nilai">
+      <center>
+        <h8>Berikan tanggapan anda mengenai website ini</h8><br /><br />
+        <button
+          onclick="window.location.href='https://forms.gle/BNFr46Rt792D5D5v5';"
+          class="btn btn-primary" target="_blank"
+        >
+          KRITIK DAN SARAN
+        </button>
+      </center>
+    </section>
+    <!-- Nilai-end -->
+    <!-- Kontak -->
+    <section id="kontak">
+      <div class="container text-center">
+        <div class="row align-items-start">
+          <h10>Informasi lebih lanjut hubungi:</h10>
+          <br /><br />
+          <div class="col">
+
+            <a href="https://stageof-sleman.devbmkg.my.id/" target="_blank"
+              >Website</a
+            >
+          </div>
+          <div class="col">
+            <img src="w.jpeg" style="width: 50px; height: 45px" />
+            <a
+              href="https://api.whatsapp.com/send/?phone=6289612643202&text&type=phone_number&app_absent=0" target="_blank"
+              >Whatsapp</a
+            >
+          </div>
+          <div class="col">
+            <img src="ig.jpeg" style="width: 50px; height: 45px" />
+            <a href="https://www.instagram.com/stageofsleman?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Kontak-end -->
+    <!-- Footer -->
+    <footer class="py-5 bg-black">
+      <div class="container px-5">
+        <p class="m-0 text-center text-white small">
+          Dibuat oleh TIM MBKM Stasiun Geofisika Kelas I Yogyakarta
+        </p>
+      </div>
+    </footer>
+    <!-- Footer-end -->
+  </body>
+</html>
